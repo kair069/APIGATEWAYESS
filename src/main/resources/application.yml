@@ -1,14 +1,14 @@
 
 
-server:
-  port: 1649
+#server:
+  #port: 1649
 
 # Registry Client
-eureka:
-  client:
-    fetch-registry: true
-    serviceUrl:
-      defaultZone: https://configuracioneurekas.azurewebsites.net/eureka
+#eureka:
+  #client:
+    #fetch-registry: true
+    #serviceUrl:
+      #defaultZone: https://configuracioneurekas.azurewebsites.net/eureka
       #defaultZone: http://localhost:8760/eureka
 # Mapeo de Microservicios
 
