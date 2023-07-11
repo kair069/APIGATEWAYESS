@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: a
+  cloud:
+    config:
+      uri: http://localhost:8888
+      fail-fast: true
+      retry:
+         max-attempts: 20
+         max-interval: 15000
+         initial-interval: 10000
+
+server:
+  port: 1649
+
+# Registry Client
+eureka:
+   client:
+      fetch-registry: true
+      serviceUrl:
+         defaultZone: http://localhost:8760/eureka
+# Mapeo de Microservicios
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: true
+      routes:
+      - id: id-Pasto
+        uri: http://localhost:9999
+        #uri: lb://CINE
+        predicates:
+        - Path=/Pasto/**
+
+
+# Activacion de endpoints
+#management:
+#     endpoints:
+#       web:
+#         exposure:
+#           include: '*'
+#     endpoint:
+#       health:
+#         show-details: always
+
+management:
+   endpoint:
+     gateway:
+       enabled: true
+   endpoints:
+     web:
+       exposure:
+         include: "gateway"
