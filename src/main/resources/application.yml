@@ -8,7 +8,7 @@ eureka:
   client:
     fetch-registry: true
     serviceUrl:
-      defaultZone:  https://configuracioneurekas.azurewebsites.net/eureka
+      defaultZone: https://configuracioneurekas.azurewebsites.net/eureka
       #defaultZone: http://localhost:8760/eureka
 # Mapeo de Microservicios
 
